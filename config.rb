@@ -56,3 +56,7 @@ set :port, 4567
 helpers do
   require './lib/toc_data.rb'
 end
+
+activate :gh_pages do |gh_pages|
+  gh_pages.remote = 'git@github.com:emailhippo/whois-developers.git'
+end
