@@ -35,6 +35,7 @@ headingLevel: 2
 Email Hippo WHOIS API services facilitate easy, fast and scalable access to the global WHOIS databases in both structured and unstructured formats.
 
 # Data privacy
+<a id="dataPrivacy"></a>
 ## Compliance
 [emailhippo.com](https://www.emailhippo.com) has been independently assessed as being ISO27001:2013 compliant by the British Assessment Bureau. Our certification number is 209495.
 
@@ -293,6 +294,16 @@ There are several things that it may be helpful to think about to control throug
 ### Large throughput requirement
 For sustained throughput, more than 50 domain queries per second, please contact us for options on private, dedicated service.
 
+## Specification
+|---|---|
+|Manufacturer|emailhippo.com|
+|Uptime|> 99.9%|
+|Response time|>0.2seconds < 8 seconds. Typical response time 0.7 seconds.|
+|Throughput and concurrency|> 100 TPS(Transactions Per Second).|
+|Security and encryption|Transport security using HTTPS. Data at rest encrypted using 256-bit AES encryption.|
+|Integration|RESTful GET over HTTPS, XML GET over HTTPS, BSON over HTTPS, protobuf over HTTPS.|
+|Authentication|License key.|
+|Infrastructure|Geographically dispersed cloud data centers, auto load balance / failover.|
 
 # Integrations
 <a id="integrations"></a>
@@ -320,6 +331,43 @@ Download ready made server and client integrations for many languages and platfo
 * Scala
 * Swift (2.x, 3.x)
 * Typescript (Angular1.x, Angular2.x, Fetch, jQuery, Node)
+
+# Frequently asked questions
+
+## Can I trust you with my data?
+Great question. See [Data privacy](#dataPrivacy) for more information.
+
+## How can I get a key?
+[Click here to request a key](https://www.emailhippo.com/contact)
+
+## How reliable is the API?
+> 99.9% average availability with a defined [SLA](https://www.emailhippo.com/terms-of-service/).
+
+## Does the system get slower when it’s busy?
+No. All infrastructure is hosted in cloud based platforms with automatic scaling enabled. Automatic scaling kicks in at busy times to provide more hardware resources to meet demand.
+
+## Do you cache results?
+
+To deliver the speed and reliability demanded by our customers, verification results are cached as follows:
+
+* Level 1 cache: CloudFlare based. Cache expiration 2 hours.
+* Level 2 cache: Microsoft Azure based. Cache expiration up to 90 days (depends on domain expiry in the WHOIS record).
+
+## Can I get My Usage in Real-Time?
+Not yet. This feature is in the development pipeline.
+
+## How does it work?
+At a basic conceptual level, the process of querying WHOIS services is very simple. First, find the authoritive WHOIS server for a particular TLD. Next, connect to the server on port 43, query the domain and capture the response.
+
+The hard bit is dealing with WHOIS services that are intrinsically configured to work against the process of querying domains in any form large volume scale. Additionally, the WHOIS system does not follow one, unified standard which means that the data returned from WHOIS services is very difficult to parse to anything that is useful for automation or integration purposes.
+
+Email Hippo’s strength in dealing with the “hard bit” of the WHOIS system comes from years of experience in solving similar challenges in email verification.
+
+## Can I get blacklisted using this API?
+No. It’s Email Hippo infrastructure that does the work.
+
+## Will anyone know that I am quering a domain?
+No. It’s Email Hippo infrastructure that does the work.
 
 # Authorization
 Email Hippo WHOIS uses API keys to allow access to the API. You can register a new WHOIS API key at our [contact form](https://www.emailhippo.com/contact).
