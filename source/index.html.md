@@ -39,7 +39,7 @@ Email Hippo WHOIS API services facilitate easy, fast and scalable access to the 
 [emailhippo.com](https://www.emailhippo.com) has been independently assessed as being ISO27001:2013 compliant by the British Assessment Bureau. Our certification number is 209495.
 
 ## Security
-[emailhippo.com](https://www.emailhippo.com) takes the security of your data seriously. Details of how your data is received, stored and processed.
+[emailhippo.com](https://www.emailhippo.com) takes the security of your data seriously. Here are the details of how your data is received, stored and processed.
 
 Other than the human-based policies and procedures defined in the Data processing terms, there are a few technology-based issues to mention:
 
@@ -87,7 +87,7 @@ Fully load balanced and automatic fail-over systems dispersed across multiple da
 See Service reliability for more information on availability and SLA.
 
 ### Easy integration
-See Client Libraries to see how quick and easy it is to integrate with our services from over 19 different technologies and platforms.
+See [integrations](#integrations) to see how quick and easy it is to integrate with our services from over 19 different technologies and platforms.
 
 ### Fanatical Service Quality Management (SQM)
 Email Hippo operational staff obsessively monitor services to ensure the best possible uptime and coverage.
@@ -293,8 +293,33 @@ There are several things that it may be helpful to think about to control throug
 ### Large throughput requirement
 For sustained throughput, more than 50 domain queries per second, please contact us for options on private, dedicated service.
 
+
 # Integrations
-Download ready made server and client integrations for dozens of languages (including PHP, Java, Ruby, JavaScript, Node, Haskell, .NET and many more) and platforms from our [Swagger Hub](https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1).
+<a id="integrations"></a>
+
+Download ready made server and client integrations for many languages and platforms from our [Swagger Hub](https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1).
+
+**Integration libraries included for:**
+
+* ActionScript
+* Bash
+* C# (.net 2.0, 4.0 or later)
+* C++ (cpprest, Qt5, Tizen)
+* Clojure
+* Dart
+* Elixir
+* Go
+* Groovy
+* Haskell
+* Java (Jersey1.x, Jersey2.x, OkHttp, Retrofit1.x, Retrofit2.x, Feign)
+* Node.js (ES5, ES6, AngularJS with Google Closure Compiler annotations) Objective-C
+* Perl
+* PHP
+* Python
+* Ruby
+* Scala
+* Swift (2.x, 3.x)
+* Typescript (Angular1.x, Angular2.x, Fetch, jQuery, Node)
 
 # Authorization
 Email Hippo WHOIS uses API keys to allow access to the API. You can register a new WHOIS API key at our [contact form](https://www.emailhippo.com/contact).
