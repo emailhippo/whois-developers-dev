@@ -295,6 +295,7 @@ There are several things that it may be helpful to think about to control throug
 For sustained throughput, more than 50 domain queries per second, please contact us for options on private, dedicated service.
 
 ## Specification
+|Item|Spec|
 |---|---|
 |Manufacturer|emailhippo.com|
 |Uptime|> 99.9%|
@@ -386,13 +387,10 @@ You can access our Swagger resources as below:
 * [Swagger docs and try it now] (https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1)
 * [Swagger schema] (https://api.whoishippo.com/swagger/v1/swagger.json)
 
-# Endpoint Documentation
+<h1 id="Email-Hippo-WHOIS-API-WHOIS">WHOIS API reference</h1>
 
 Base URLs:
-
 [//api.whoishippo.com/](//api.whoishippo.com/)
-
-<h1 id="Email-Hippo-WHOIS-API-WHOIS">WHOIS</h1>
 
 Query WHOIS records.
 
