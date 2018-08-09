@@ -293,6 +293,9 @@ There are several things that it may be helpful to think about to control throug
 ### Large throughput requirement
 For sustained throughput, more than 50 domain queries per second, please contact us for options on private, dedicated service.
 
+# Integrations
+Download ready made server and client integrations for dozens of languages (including PHP, Java, Ruby, JavaScript, Node, Haskell, .NET and many more) and platforms from our [Swagger Hub](https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1).
+
 # Authorization
 Email Hippo WHOIS uses API keys to allow access to the API. You can register a new WHOIS API key at our [contact form](https://www.emailhippo.com/contact).
 
@@ -307,14 +310,14 @@ You must replace <code>yourlicensekey</code> with your personal API key.
 # Swagger
 You can access our Swagger resources as below:
 
-* [Swagger docs and try it now] (https://api.whoishippo.com/swagger)
+* [Swagger docs and try it now] (https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1)
 * [Swagger schema] (https://api.whoishippo.com/swagger/v1/swagger.json)
 
 # Endpoint Documentation
 
 Base URLs:
 
-`<a href="//api.whoishippo.com/">//api.whoishippo.com/</a>`
+[//api.whoishippo.com/](//api.whoishippo.com/)
 
 <h1 id="Email-Hippo-WHOIS-API-WHOIS">WHOIS</h1>
 
