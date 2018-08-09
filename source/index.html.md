@@ -341,7 +341,7 @@ Great question. See [Data privacy](#dataPrivacy) for more information.
 [Click here to request a key](https://www.emailhippo.com/contact)
 
 ## How reliable is the API?
-> 99.9% average availability with a defined [SLA](https://www.emailhippo.com/terms-of-service/).
+&gt; 99.9% average availability with a defined [SLA](https://www.emailhippo.com/terms-of-service/).
 
 ## Does the system get slower when it’s busy?
 No. All infrastructure is hosted in cloud based platforms with automatic scaling enabled. Automatic scaling kicks in at busy times to provide more hardware resources to meet demand.
