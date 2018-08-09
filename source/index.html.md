@@ -12,8 +12,10 @@ language_tabs:
   - go: Go
 
 toc_footers:
-  - <a href='https://www.emailhippo.com/contact'>Sign Up for a Developer Key</a>
+  - <a href='https://www.emailhippo.com/contact'>Sign up for a developer key</a>
   - <a href='https://help.emailhippo.com'>Support</a>
+  - <a href='https://www.emailhippo.com/terms-of-service/'>Terms of service</a>
+  - <a href='https://www.emailhippo.com/compliance/'>Compliance (ISO27001 and GDPR)</a>
 
 includes:
   - errors
@@ -105,7 +107,7 @@ Endpoints are “versioned”. This means that Email Hippo can continue to relea
 Email Hippo is used to query WHOIS records in real-time.
 
 ## Editions
-## Features by edition
+### Features by edition
 <table>
 	<thead>
 		<tr>
@@ -228,8 +230,31 @@ Email Hippo is used to query WHOIS records in real-time.
 </table>
 
 <aside class="notice">
-Once that you have a license key, the edition is configurable on the fly by upgrading your at https://help.emailhippo.com.
+Once that you have a license key, the edition is configurable on the fly by upgrading your edition at https://help.emailhippo.com.
 </aside>
+
+## Supported Top Level Domains (TLDs)
+
+* .asia
+* .br
+* .co.uk
+* .com.br
+* .com
+* .de
+* .fr
+* .info
+* .io
+* .in
+* .jp
+* .me.uk
+* .mobi
+* .net
+* .org
+* .org.uk
+* .ru
+* .uk
+* .uk.com
+
 
 ## Service reliability
 Reliability of your systems is important to you and your clients. You can be sure that we won’t let you down when you use our services in your business applications.
@@ -289,16 +314,13 @@ You can access our Swagger resources as below:
 
 Base URLs:
 
-* <a href="//api.whoishippo.com/">//api.whoishippo.com/</a>
-
-<a href="https://www.emailhippo.com/terms-of-service">Terms of service</a>
-Web: <a href="https://help.emailhippo.com">Support Team</a> 
+`<a href="//api.whoishippo.com/">//api.whoishippo.com/</a>`
 
 <h1 id="Email-Hippo-WHOIS-API-WHOIS">WHOIS</h1>
 
 Query WHOIS records.
 
-## V1ByKByDGet
+## Get WHOIS By Domain
 
 <a id="opIdV1ByKByDGet"></a>
 
@@ -616,187 +638,17 @@ func main() {
 }
 ```
 
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<WhoisRecord>
-  <version>
-    <v>string</v>
-    <doc>string</doc>
-  </version>
-  <meta>
-    <recordCreatedDate>2018-08-09T10:26:42Z</recordCreatedDate>
-    <recordUpdatedDate>2018-08-09T10:26:42Z</recordUpdatedDate>
-    <recordAge>string</recordAge>
-    <recordAgeIso8601>string</recordAgeIso8601>
-    <timeToExpiry>string</timeToExpiry>
-    <timeToExpirySeconds>0</timeToExpirySeconds>
-    <timeToExpiryIso8601>string</timeToExpiryIso8601>
-    <tld>string</tld>
-    <domain>string</domain>
-    <domainAge>string</domainAge>
-    <domainAgeSeconds>0</domainAgeSeconds>
-    <domainAgeIso8601>string</domainAgeIso8601>
-    <parseCode>0</parseCode>
-    <executionTime>0</executionTime>
-  </meta>
-  <whoisServerRecord>
-    <recordFound>true</recordFound>
-    <registrar>
-      <registrarId>string</registrarId>
-      <name>string</name>
-      <whois>string</whois>
-      <url>string</url>
-      <abuseEmail>string</abuseEmail>
-      <abusePhone>string</abusePhone>
-    </registrar>
-    <dnsSec>string</dnsSec>
-    <domainName>string</domainName>
-    <tld>string</tld>
-    <domainHandle>string</domainHandle>
-    <domainOwnerContact>
-      <userId>string</userId>
-      <name>string</name>
-      <organization>string</organization>
-      <street1>string</street1>
-      <street2>string</street2>
-      <street3>string</street3>
-      <street4>string</street4>
-      <city>string</city>
-      <state>string</state>
-      <postalCode>string</postalCode>
-      <country>string</country>
-      <phoneNumber>string</phoneNumber>
-      <phoneNumberExt>string</phoneNumberExt>
-      <faxNumber>string</faxNumber>
-      <faxNumberExt>string</faxNumberExt>
-      <email>string</email>
-    </domainOwnerContact>
-    <adminContact>
-      <userId>string</userId>
-      <name>string</name>
-      <organization>string</organization>
-      <street1>string</street1>
-      <street2>string</street2>
-      <street3>string</street3>
-      <street4>string</street4>
-      <city>string</city>
-      <state>string</state>
-      <postalCode>string</postalCode>
-      <country>string</country>
-      <phoneNumber>string</phoneNumber>
-      <phoneNumberExt>string</phoneNumberExt>
-      <faxNumber>string</faxNumber>
-      <faxNumberExt>string</faxNumberExt>
-      <email>string</email>
-    </adminContact>
-    <billingContact>
-      <userId>string</userId>
-      <name>string</name>
-      <organization>string</organization>
-      <street1>string</street1>
-      <street2>string</street2>
-      <street3>string</street3>
-      <street4>string</street4>
-      <city>string</city>
-      <state>string</state>
-      <postalCode>string</postalCode>
-      <country>string</country>
-      <phoneNumber>string</phoneNumber>
-      <phoneNumberExt>string</phoneNumberExt>
-      <faxNumber>string</faxNumber>
-      <faxNumberExt>string</faxNumberExt>
-      <email>string</email>
-    </billingContact>
-    <techContact>
-      <userId>string</userId>
-      <name>string</name>
-      <organization>string</organization>
-      <street1>string</street1>
-      <street2>string</street2>
-      <street3>string</street3>
-      <street4>string</street4>
-      <city>string</city>
-      <state>string</state>
-      <postalCode>string</postalCode>
-      <country>string</country>
-      <phoneNumber>string</phoneNumber>
-      <phoneNumberExt>string</phoneNumberExt>
-      <faxNumber>string</faxNumber>
-      <faxNumberExt>string</faxNumberExt>
-      <email>string</email>
-    </techContact>
-    <registrarContact>
-      <userId>string</userId>
-      <name>string</name>
-      <organization>string</organization>
-      <street1>string</street1>
-      <street2>string</street2>
-      <street3>string</street3>
-      <street4>string</street4>
-      <city>string</city>
-      <state>string</state>
-      <postalCode>string</postalCode>
-      <country>string</country>
-      <phoneNumber>string</phoneNumber>
-      <phoneNumberExt>string</phoneNumberExt>
-      <faxNumber>string</faxNumber>
-      <faxNumberExt>string</faxNumberExt>
-      <email>string</email>
-    </registrarContact>
-    <zoneContact>
-      <userId>string</userId>
-      <name>string</name>
-      <organization>string</organization>
-      <street1>string</street1>
-      <street2>string</street2>
-      <street3>string</street3>
-      <street4>string</street4>
-      <city>string</city>
-      <state>string</state>
-      <postalCode>string</postalCode>
-      <country>string</country>
-      <phoneNumber>string</phoneNumber>
-      <phoneNumberExt>string</phoneNumberExt>
-      <faxNumber>string</faxNumber>
-      <faxNumberExt>string</faxNumberExt>
-      <email>string</email>
-    </zoneContact>
-    <nameServers>
-      <Address>string</Address>
-    </nameServers>
-    <domainStati>string</domainStati>
-    <remarks>string</remarks>
-    <reseller>string</reseller>
-    <created>2018-08-09T10:26:42Z</created>
-    <changed>2018-08-09T10:26:42Z</changed>
-    <expiry>2018-08-09T10:26:42Z</expiry>
-    <rawResponse>string</rawResponse>
-    <customFields>
-      <customFieldId>0</customFieldId>
-      <name>string</name>
-      <value>string</value>
-    </customFields>
-  </whoisServerRecord>
-</WhoisRecord>
-```
-
 <h3 id="v1bykbydget-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|[WhoisRecord](#schemawhoisrecord)|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|* Must enter a valid license key and domain to query.
-* A domain to query is required.|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|* License key refused.
-* Key expired or quota exceeded.|None|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)| Must enter a valid license key and domain to query or; A domain to query is required.|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|* License key refused or; Key expired or quota exceeded.|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|The domain is not found in WHOIS.|None|
 |422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|Cannot process a fully parsed respone. Top Level Domain (TLD) is not supported.|None|
 |429|[Too Many Requests](https://tools.ietf.org/html/rfc6585#section-4)|Maximum processing rate exceeded. Please slow your requests to &lt; 50 queries per second.|None|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Server error.|None|
-
-<aside class="success">
-This operation does not require authentication
-</aside>
 
 # Schemas
 
