@@ -228,7 +228,7 @@ Email Hippo is used to query WHOIS records in real-time.
 </table>
 
 <aside class="notice">
-Once that you have a license key, the edition is configurable on the fly by [contacting us](https://www.emailhippo.com/contact)
+Once that you have a license key, the edition is configurable on the fly by upgrading your at https://help.emailhippo.com.
 </aside>
 
 ## Service reliability
