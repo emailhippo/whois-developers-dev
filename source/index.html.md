@@ -34,8 +34,16 @@ headingLevel: 2
 # Introduction
 Email Hippo WHOIS API services facilitate easy, fast and scalable access to the global WHOIS databases in both structured and unstructured formats.
 
+# Quick start
+Ready to get implementing?
+
+* [Go to WHOIS API reference](#Email-Hippo-WHOIS-API-WHOIS).
+* [See integration libraries](#integrations)
+
 # Data privacy
 <a id="dataPrivacy"></a>
+We take your privacy, data security and legislative compliance seriously.
+
 ## Compliance
 [emailhippo.com](https://www.emailhippo.com) has been independently assessed as being ISO27001:2013 compliant by the British Assessment Bureau. Our certification number is 209495.
 
@@ -370,7 +378,15 @@ No. It’s Email Hippo infrastructure that does the work.
 ## Will anyone know that I am quering a domain?
 No. It’s Email Hippo infrastructure that does the work.
 
-# Authorization
+# Swagger
+You can access our Swagger resources as below:
+
+* [Swagger docs and try it now] (https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1)
+* [Swagger schema] (https://api.whoishippo.com/swagger/v1/swagger.json)
+
+<h1 id="Email-Hippo-WHOIS-API-WHOIS">WHOIS API reference</h1>
+
+## Authorization
 Email Hippo WHOIS uses API keys to allow access to the API. You can register a new WHOIS API key at our [contact form](https://www.emailhippo.com/contact).
 
 Email Hippo WHOIS expects the API key to be included in all API requests to the server.
@@ -381,22 +397,13 @@ Email Hippo WHOIS expects the API key to be included in all API requests to the 
 You must replace <code>yourlicensekey</code> with your personal API key.
 </aside>
 
-# Swagger
-You can access our Swagger resources as below:
-
-* [Swagger docs and try it now] (https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1)
-* [Swagger schema] (https://api.whoishippo.com/swagger/v1/swagger.json)
-
-<h1 id="Email-Hippo-WHOIS-API-WHOIS">WHOIS API reference</h1>
-
-Base URLs:
+## Base URLs:
 [//api.whoishippo.com/](//api.whoishippo.com/)
 
-Query WHOIS records.
-
 ## Get WHOIS By Domain
-
 <a id="opIdV1ByKByDGet"></a>
+
+Query WHOIS records by domain and license key.
 
 > Code samples
 
