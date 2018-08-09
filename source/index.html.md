@@ -1,20 +1,33 @@
 ---
-title: WHOIS API Reference
+title: Email Hippo WHOIS API
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+language_tabs:
+  - shell: Shell
+  - http: HTTP
+  - javascript: JavaScript
+  - javascript--nodejs: Node.JS
+  - ruby: Ruby
+  - python: Python
+  - java: Java
+  - go: Go
 
 toc_footers:
   - <a href='https://www.emailhippo.com/contact'>Sign Up for a Developer Key</a>
+  - <a href='https://help.emailhippo.com'>Support</a>
 
 includes:
   - errors
 
 search: true
+highlight_theme: darkula
+headingLevel: 2
 ---
+
+<h1 id="Email-Hippo-WHOIS-API">Email Hippo WHOIS API v1</h1>
+
+> Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
+
+![](https://d1wiejlotg3vr4.cloudfront.net/bizbranding/co.logos/eh-horiz-695x161.png "Email Hippo")
 
 # Introduction
 Email Hippo WHOIS API services facilitate easy, fast and scalable access to the global WHOIS databases in both structured and unstructured formats.
@@ -272,252 +285,1070 @@ You can access our Swagger resources as below:
 * [Swagger docs and try it now] (https://api.whoishippo.com/swagger)
 * [Swagger schema] (https://api.whoishippo.com/swagger/v1/swagger.json)
 
-# Get
+# Endpoint Documentation
 
-## Get WHOIS Record
+Base URLs:
 
-This endpoint retrieves a specific WHOIS record.
+* <a href="//api.whoishippo.com/">//api.whoishippo.com/</a>
 
-### HTTP Request
+<a href="https://www.emailhippo.com/terms-of-service">Terms of service</a>
+Web: <a href="https://help.emailhippo.com">Support Team</a> 
 
-`GET https://api.whoishippo.com/v1/{k}/{d}`
+<h1 id="Email-Hippo-WHOIS-API-WHOIS">WHOIS</h1>
 
-### Query Parameters
+Query WHOIS records.
 
-Parameter | Description
---------- | -----------
-k | The license key.
-d | The domain to query.
+## V1ByKByDGet
 
-> Code samples use the domain microsoft.com for demonstration purposes
+<a id="opIdV1ByKByDGet"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET //api.whoishippo.com//v1/{k}/{d} \
+  -H 'Accept: application/json'
+
+```
+
+```http
+GET //api.whoishippo.com//v1/{k}/{d} HTTP/1.1
+Host: null
+
+Accept: application/json
+
+```
+
+```javascript
+var headers = {
+  'Accept':'application/json'
+
+};
+
+$.ajax({
+  url: '//api.whoishippo.com//v1/{k}/{d}',
+  method: 'get',
+
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+
+```
+
+```javascript--nodejs
+const request = require('node-fetch');
+
+const headers = {
+  'Accept':'application/json'
+
+};
+
+fetch('//api.whoishippo.com//v1/{k}/{d}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
 
 ```ruby
-require 'uri'
-require 'net/http'
+require 'rest-client'
+require 'json'
 
-url = URI("https://api.whoishippo.com/v1/{k}/{d}")
+headers = {
+  'Accept' => 'application/json'
+}
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+result = RestClient.get '//api.whoishippo.com//v1/{k}/{d}',
+  params: {
+  }, headers: headers
 
-request = Net::HTTP::Get.new(url)
-request["accept"] = 'application/json'
+p JSON.parse(result)
 
-response = http.request(request)
-puts response.read_body
 ```
 
 ```python
 import requests
+headers = {
+  'Accept': 'application/json'
+}
 
-url = "https://api.whoishippo.com/v1/{k}/{d}"
+r = requests.get('//api.whoishippo.com//v1/{k}/{d}', params={
 
-headers = {'accept': 'application/json'}
+}, headers = headers)
 
-response = requests.request("GET", url, headers=headers)
+print r.json()
 
-print(response.text)
 ```
 
-```shell
-curl --request GET \
-  --url https://api.whoishippo.com/v1/{k}/{d} \
-  --header 'accept: application/json'
+```java
+URL obj = new URL("//api.whoishippo.com//v1/{k}/{d}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
 ```
 
-```javascript
-var data = null;
+```go
+package main
 
-var xhr = new XMLHttpRequest();
+import (
+       "bytes"
+       "net/http"
+)
 
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === this.DONE) {
-    console.log(this.responseText);
-  }
-});
+func main() {
 
-xhr.open("GET", "https://api.whoishippo.com/v1/{k}/{d}");
-xhr.setRequestHeader("accept", "application/json");
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        
+    }
 
-xhr.send(data);
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "//api.whoishippo.com//v1/{k}/{d}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
 ```
 
-> The above command returns JSON structured like this:
+`GET /v1/{k}/{d}`
+
+*Get WHOIS record.*
+
+<h3 id="v1bykbydget-parameters">Parameters</h3>
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|k|path|string|true|The key.|
+|d|path|string|true|The domain to query.|
+
+> Example responses
+
+> 200 Response
 
 ```json
 {
   "version": {
-    "v": "Enterprise-(1.0.19)",
-    "doc": ""
+    "v": "string",
+    "doc": "string"
   },
   "meta": {
-    "recordCreatedDate": "2018-07-20T13:27:04Z",
-    "recordUpdatedDate": "2018-07-20T13:27:04Z",
-    "recordAge": "0 year(s), 0 months, 2 week(s), 5 day(s), 2 hour(s), 13 minute(s)",
-    "recordAgeIso8601": "P19DT2H13M44.6624377S",
-    "timeToExpiry": "2 year(s), 8 months, 3 week(s), 4 day(s)",
-    "timeToExpirySeconds": 86271551,
-    "timeToExpiryIso8601": "P2Y8M25D",
-    "tld": "com",
-    "domain": "microsoft.com",
-    "domainAge": "27 year(s), 3 month(s), 0 week(s), 6 day(s)",
-    "domainAgeSeconds": 860586048,
-    "domainAgeIso8601": "P27Y3M6D",
-    "parseCode": "Success",
-    "executionTime": 611
+    "recordCreatedDate": "2018-08-09T10:26:42Z",
+    "recordUpdatedDate": "2018-08-09T10:26:42Z",
+    "recordAge": "string",
+    "recordAgeIso8601": "string",
+    "timeToExpiry": "string",
+    "timeToExpirySeconds": 0,
+    "timeToExpiryIso8601": "string",
+    "tld": "string",
+    "domain": "string",
+    "domainAge": "string",
+    "domainAgeSeconds": 0,
+    "domainAgeIso8601": "string",
+    "parseCode": 0,
+    "executionTime": 0
   },
   "whoisServerRecord": {
     "recordFound": true,
     "registrar": {
-      "registrarId": "292",
-      "name": "MarkMonitor, Inc.",
-      "whois": "whois.markmonitor.com",
-      "url": "http://www.markmonitor.com",
-      "abuseEmail": "abusecomplaints@markmonitor.com",
-      "abusePhone": "+1.2083895740"
+      "registrarId": "string",
+      "name": "string",
+      "whois": "string",
+      "url": "string",
+      "abuseEmail": "string",
+      "abusePhone": "string"
     },
-    "dnsSec": "unsigned",
-    "domainName": "microsoft.com",
-    "tld": "com",
-    "domainHandle": "2724960_DOMAIN_COM-VRSN",
+    "dnsSec": "string",
+    "domainName": "string",
+    "tld": "string",
+    "domainHandle": "string",
     "domainOwnerContact": {
-      "userId": "",
-      "name": "Domain Administrator",
-      "organization": "Microsoft Corporation",
-      "street1": "One Microsoft Way,",
-      "street2": null,
-      "street3": null,
-      "street4": null,
-      "city": "Redmond",
-      "state": "WA",
-      "postalCode": "98052",
-      "country": "US",
-      "phoneNumber": "+1.4258828080",
-      "phoneNumberExt": "",
-      "faxNumber": "+1.4259367329",
-      "faxNumberExt": "",
-      "email": "domains@microsoft.com"
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
     },
     "adminContact": {
-      "userId": "",
-      "name": "Domain Administrator",
-      "organization": "Microsoft Corporation",
-      "street1": "One Microsoft Way,",
-      "street2": null,
-      "street3": null,
-      "street4": null,
-      "city": "Redmond",
-      "state": "WA",
-      "postalCode": "98052",
-      "country": "US",
-      "phoneNumber": "+1.4258828080",
-      "phoneNumberExt": "",
-      "faxNumber": "+1.4259367329",
-      "faxNumberExt": "",
-      "email": "domains@microsoft.com"
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
     },
     "billingContact": {
-      "userId": null,
-      "name": null,
-      "organization": null,
-      "street1": null,
-      "street2": null,
-      "street3": null,
-      "street4": null,
-      "city": null,
-      "state": null,
-      "postalCode": null,
-      "country": null,
-      "phoneNumber": null,
-      "phoneNumberExt": null,
-      "faxNumber": null,
-      "faxNumberExt": null,
-      "email": null
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
     },
     "techContact": {
-      "userId": "",
-      "name": "MSN Hostmaster",
-      "organization": "Microsoft Corporation",
-      "street1": "One Microsoft Way,",
-      "street2": null,
-      "street3": null,
-      "street4": null,
-      "city": "Redmond",
-      "state": "WA",
-      "postalCode": "98052",
-      "country": "US",
-      "phoneNumber": "+1.4258828080",
-      "phoneNumberExt": "",
-      "faxNumber": "+1.4259367329",
-      "faxNumberExt": "",
-      "email": "msnhst@microsoft.com"
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
     },
     "registrarContact": {
-      "userId": null,
-      "name": null,
-      "organization": null,
-      "street1": null,
-      "street2": null,
-      "street3": null,
-      "street4": null,
-      "city": null,
-      "state": null,
-      "postalCode": null,
-      "country": null,
-      "phoneNumber": null,
-      "phoneNumberExt": null,
-      "faxNumber": null,
-      "faxNumberExt": null,
-      "email": null
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
     },
     "zoneContact": {
-      "userId": null,
-      "name": null,
-      "organization": null,
-      "street1": null,
-      "street2": null,
-      "street3": null,
-      "street4": null,
-      "city": null,
-      "state": null,
-      "postalCode": null,
-      "country": null,
-      "phoneNumber": null,
-      "phoneNumberExt": null,
-      "faxNumber": null,
-      "faxNumberExt": null,
-      "email": null
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
     },
     "nameServers": [
       {
-        "Address": "ns3.msft.net"
-      },
-      {
-        "Address": "ns1.msft.net"
-      },
-      {
-        "Address": "ns2.msft.net"
-      },
-      {
-        "Address": "ns4.msft.net"
+        "Address": "string"
       }
     ],
     "domainStati": [
-      "clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)",
-      "clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)",
-      "clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)",
-      "serverUpdateProhibited (https://www.icann.org/epp#serverUpdateProhibited)",
-      "serverTransferProhibited (https://www.icann.org/epp#serverTransferProhibited)",
-      "serverDeleteProhibited (https://www.icann.org/epp#serverDeleteProhibited)"
+      "string"
     ],
-    "remarks": null,
-    "reseller": "",
-    "created": "1991-05-02T04:00:00Z",
-    "changed": "2014-10-15T11:00:12Z",
-    "expiry": "2021-05-03T04:00:00Z",
-    "rawResponse": "   Domain Name: MICROSOFT.COM\r\n   Registry Domain ID: 2724960_DOMAIN_COM-VRSN\r\n   Registrar WHOIS Server: whois.markmonitor.com\r\n   Registrar URL: http://www.markmonitor.com\r\n   Updated Date: 2014-10-09T16:28:25Z\r\n   Creation Date: 1991-05-02T04:00:00Z\r\n   Registry Expiry Date: 2021-05-03T04:00:00Z\r\n   Registrar: MarkMonitor Inc.\r\n   Registrar IANA ID: 292\r\n   Registrar Abuse Contact Email: abusecomplaints@markmonitor.com\r\n   Registrar Abuse Contact Phone: +1.2083895740\r\n   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited\r\n   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited\r\n   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited\r\n   Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited\r\n   Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited\r\n   Domain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited\r\n   Name Server: NS1.MSFT.NET\r\n   Name Server: NS2.MSFT.NET\r\n   Name Server: NS3.MSFT.NET\r\n   Name Server: NS4.MSFT.NET\r\n   DNSSEC: unsigned\r\n   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/\r\n>>> Last update of whois database: 2018-07-20T13:26:49Z <<<\r\n\r\nFor more information on Whois status codes, please visit https://icann.org/epp\r\n\r\nNOTICE: The expiration date displayed in this record is the date the\r\nregistrar's sponsorship of the domain name registration in the registry is\r\ncurrently set to expire. This date does not necessarily reflect the expiration\r\ndate of the domain name registrant's agreement with the sponsoring\r\nregistrar.  Users may consult the sponsoring registrar's Whois database to\r\nview the registrar's reported date of expiration for this registration.\r\n\r\nTERMS OF USE: You are not authorized to access or query our Whois\r\ndatabase through the use of electronic processes that are high-volume and\r\nautomated except as reasonably necessary to register domain names or\r\nmodify existing registrations; the Data in VeriSign Global Registry\r\nServices' (\"VeriSign\") Whois database is provided by VeriSign for\r\ninformation purposes only, and to assist persons in obtaining information\r\nabout or related to a domain name registration record. VeriSign does not\r\nguarantee its accuracy. By submitting a Whois query, you agree to abide\r\nby the following terms of use: You agree that you may use this Data only\r\nfor lawful purposes and that under no circumstances will you use this Data\r\nto: (1) allow, enable, or otherwise support the transmission of mass\r\nunsolicited, commercial advertising or solicitations via e-mail, telephone,\r\nor facsimile; or (2) enable high volume, automated, electronic processes\r\nthat apply to VeriSign (or its computer systems). The compilation,\r\nrepackaging, dissemination or other use of this Data is expressly\r\nprohibited without the prior written consent of VeriSign. You agree not to\r\nuse electronic processes that are automated and high-volume to access or\r\nquery the Whois database except as reasonably necessary to register\r\ndomain names or modify existing registrations. VeriSign reserves the right\r\nto restrict your access to the Whois database in its sole discretion to ensure\r\noperational stability.  VeriSign may restrict or terminate your access to the\r\nWhois database for failure to abide by these terms of use. VeriSign\r\nreserves the right to modify these terms at any time.\r\n\r\nThe Registry database contains ONLY .COM, .NET, .EDU domains and\r\nRegistrars.",
-    "customFields": null
+    "remarks": "string",
+    "reseller": "string",
+    "created": "2018-08-09T10:26:42Z",
+    "changed": "2018-08-09T10:26:42Z",
+    "expiry": "2018-08-09T10:26:42Z",
+    "rawResponse": "string",
+    "customFields": [
+      {
+        "customFieldId": 0,
+        "name": "string",
+        "value": "string"
+      }
+    ]
   }
 }
 ```
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<WhoisRecord>
+  <version>
+    <v>string</v>
+    <doc>string</doc>
+  </version>
+  <meta>
+    <recordCreatedDate>2018-08-09T10:26:42Z</recordCreatedDate>
+    <recordUpdatedDate>2018-08-09T10:26:42Z</recordUpdatedDate>
+    <recordAge>string</recordAge>
+    <recordAgeIso8601>string</recordAgeIso8601>
+    <timeToExpiry>string</timeToExpiry>
+    <timeToExpirySeconds>0</timeToExpirySeconds>
+    <timeToExpiryIso8601>string</timeToExpiryIso8601>
+    <tld>string</tld>
+    <domain>string</domain>
+    <domainAge>string</domainAge>
+    <domainAgeSeconds>0</domainAgeSeconds>
+    <domainAgeIso8601>string</domainAgeIso8601>
+    <parseCode>0</parseCode>
+    <executionTime>0</executionTime>
+  </meta>
+  <whoisServerRecord>
+    <recordFound>true</recordFound>
+    <registrar>
+      <registrarId>string</registrarId>
+      <name>string</name>
+      <whois>string</whois>
+      <url>string</url>
+      <abuseEmail>string</abuseEmail>
+      <abusePhone>string</abusePhone>
+    </registrar>
+    <dnsSec>string</dnsSec>
+    <domainName>string</domainName>
+    <tld>string</tld>
+    <domainHandle>string</domainHandle>
+    <domainOwnerContact>
+      <userId>string</userId>
+      <name>string</name>
+      <organization>string</organization>
+      <street1>string</street1>
+      <street2>string</street2>
+      <street3>string</street3>
+      <street4>string</street4>
+      <city>string</city>
+      <state>string</state>
+      <postalCode>string</postalCode>
+      <country>string</country>
+      <phoneNumber>string</phoneNumber>
+      <phoneNumberExt>string</phoneNumberExt>
+      <faxNumber>string</faxNumber>
+      <faxNumberExt>string</faxNumberExt>
+      <email>string</email>
+    </domainOwnerContact>
+    <adminContact>
+      <userId>string</userId>
+      <name>string</name>
+      <organization>string</organization>
+      <street1>string</street1>
+      <street2>string</street2>
+      <street3>string</street3>
+      <street4>string</street4>
+      <city>string</city>
+      <state>string</state>
+      <postalCode>string</postalCode>
+      <country>string</country>
+      <phoneNumber>string</phoneNumber>
+      <phoneNumberExt>string</phoneNumberExt>
+      <faxNumber>string</faxNumber>
+      <faxNumberExt>string</faxNumberExt>
+      <email>string</email>
+    </adminContact>
+    <billingContact>
+      <userId>string</userId>
+      <name>string</name>
+      <organization>string</organization>
+      <street1>string</street1>
+      <street2>string</street2>
+      <street3>string</street3>
+      <street4>string</street4>
+      <city>string</city>
+      <state>string</state>
+      <postalCode>string</postalCode>
+      <country>string</country>
+      <phoneNumber>string</phoneNumber>
+      <phoneNumberExt>string</phoneNumberExt>
+      <faxNumber>string</faxNumber>
+      <faxNumberExt>string</faxNumberExt>
+      <email>string</email>
+    </billingContact>
+    <techContact>
+      <userId>string</userId>
+      <name>string</name>
+      <organization>string</organization>
+      <street1>string</street1>
+      <street2>string</street2>
+      <street3>string</street3>
+      <street4>string</street4>
+      <city>string</city>
+      <state>string</state>
+      <postalCode>string</postalCode>
+      <country>string</country>
+      <phoneNumber>string</phoneNumber>
+      <phoneNumberExt>string</phoneNumberExt>
+      <faxNumber>string</faxNumber>
+      <faxNumberExt>string</faxNumberExt>
+      <email>string</email>
+    </techContact>
+    <registrarContact>
+      <userId>string</userId>
+      <name>string</name>
+      <organization>string</organization>
+      <street1>string</street1>
+      <street2>string</street2>
+      <street3>string</street3>
+      <street4>string</street4>
+      <city>string</city>
+      <state>string</state>
+      <postalCode>string</postalCode>
+      <country>string</country>
+      <phoneNumber>string</phoneNumber>
+      <phoneNumberExt>string</phoneNumberExt>
+      <faxNumber>string</faxNumber>
+      <faxNumberExt>string</faxNumberExt>
+      <email>string</email>
+    </registrarContact>
+    <zoneContact>
+      <userId>string</userId>
+      <name>string</name>
+      <organization>string</organization>
+      <street1>string</street1>
+      <street2>string</street2>
+      <street3>string</street3>
+      <street4>string</street4>
+      <city>string</city>
+      <state>string</state>
+      <postalCode>string</postalCode>
+      <country>string</country>
+      <phoneNumber>string</phoneNumber>
+      <phoneNumberExt>string</phoneNumberExt>
+      <faxNumber>string</faxNumber>
+      <faxNumberExt>string</faxNumberExt>
+      <email>string</email>
+    </zoneContact>
+    <nameServers>
+      <Address>string</Address>
+    </nameServers>
+    <domainStati>string</domainStati>
+    <remarks>string</remarks>
+    <reseller>string</reseller>
+    <created>2018-08-09T10:26:42Z</created>
+    <changed>2018-08-09T10:26:42Z</changed>
+    <expiry>2018-08-09T10:26:42Z</expiry>
+    <rawResponse>string</rawResponse>
+    <customFields>
+      <customFieldId>0</customFieldId>
+      <name>string</name>
+      <value>string</value>
+    </customFields>
+  </whoisServerRecord>
+</WhoisRecord>
+```
+
+<h3 id="v1bykbydget-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|[WhoisRecord](#schemawhoisrecord)|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|* Must enter a valid license key and domain to query.
+* A domain to query is required.|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|* License key refused.
+* Key expired or quota exceeded.|None|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|The domain is not found in WHOIS.|None|
+|422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|Cannot process a fully parsed respone. Top Level Domain (TLD) is not supported.|None|
+|429|[Too Many Requests](https://tools.ietf.org/html/rfc6585#section-4)|Maximum processing rate exceeded. Please slow your requests to &lt; 50 queries per second.|None|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Server error.|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Schemas
+
+<h2 id="tocSwhoisrecord">WhoisRecord</h2>
+
+<a id="schemawhoisrecord"></a>
+
+```json
+{
+  "version": {
+    "v": "string",
+    "doc": "string"
+  },
+  "meta": {
+    "recordCreatedDate": "2018-08-09T10:26:42Z",
+    "recordUpdatedDate": "2018-08-09T10:26:42Z",
+    "recordAge": "string",
+    "recordAgeIso8601": "string",
+    "timeToExpiry": "string",
+    "timeToExpirySeconds": 0,
+    "timeToExpiryIso8601": "string",
+    "tld": "string",
+    "domain": "string",
+    "domainAge": "string",
+    "domainAgeSeconds": 0,
+    "domainAgeIso8601": "string",
+    "parseCode": 0,
+    "executionTime": 0
+  },
+  "whoisServerRecord": {
+    "recordFound": true,
+    "registrar": {
+      "registrarId": "string",
+      "name": "string",
+      "whois": "string",
+      "url": "string",
+      "abuseEmail": "string",
+      "abusePhone": "string"
+    },
+    "dnsSec": "string",
+    "domainName": "string",
+    "tld": "string",
+    "domainHandle": "string",
+    "domainOwnerContact": {
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
+    },
+    "adminContact": {
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
+    },
+    "billingContact": {
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
+    },
+    "techContact": {
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
+    },
+    "registrarContact": {
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
+    },
+    "zoneContact": {
+      "userId": "string",
+      "name": "string",
+      "organization": "string",
+      "street1": "string",
+      "street2": "string",
+      "street3": "string",
+      "street4": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": "string",
+      "country": "string",
+      "phoneNumber": "string",
+      "phoneNumberExt": "string",
+      "faxNumber": "string",
+      "faxNumberExt": "string",
+      "email": "string"
+    },
+    "nameServers": [
+      {
+        "Address": "string"
+      }
+    ],
+    "domainStati": [
+      "string"
+    ],
+    "remarks": "string",
+    "reseller": "string",
+    "created": "2018-08-09T10:26:42Z",
+    "changed": "2018-08-09T10:26:42Z",
+    "expiry": "2018-08-09T10:26:42Z",
+    "rawResponse": "string",
+    "customFields": [
+      {
+        "customFieldId": 0,
+        "name": "string",
+        "value": "string"
+      }
+    ]
+  }
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|version|[Version](#schemaversion)|false|none|none|
+|meta|[Meta](#schemameta)|false|none|none|
+|whoisServerRecord|[WhoisServerRecord](#schemawhoisserverrecord)|false|none|none|
+
+<h2 id="tocSversion">Version</h2>
+
+<a id="schemaversion"></a>
+
+```json
+{
+  "v": "string",
+  "doc": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|v|string|false|none|none|
+|doc|string|false|none|none|
+
+<h2 id="tocSmeta">Meta</h2>
+
+<a id="schemameta"></a>
+
+```json
+{
+  "recordCreatedDate": "2018-08-09T10:26:42Z",
+  "recordUpdatedDate": "2018-08-09T10:26:42Z",
+  "recordAge": "string",
+  "recordAgeIso8601": "string",
+  "timeToExpiry": "string",
+  "timeToExpirySeconds": 0,
+  "timeToExpiryIso8601": "string",
+  "tld": "string",
+  "domain": "string",
+  "domainAge": "string",
+  "domainAgeSeconds": 0,
+  "domainAgeIso8601": "string",
+  "parseCode": 0,
+  "executionTime": 0
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|recordCreatedDate|string(date-time)|false|none|none|
+|recordUpdatedDate|string(date-time)|false|none|none|
+|recordAge|string|false|none|none|
+|recordAgeIso8601|string|false|none|none|
+|timeToExpiry|string|false|none|none|
+|timeToExpirySeconds|integer(int64)|false|none|none|
+|timeToExpiryIso8601|string|false|none|none|
+|tld|string|false|none|none|
+|domain|string|false|none|none|
+|domainAge|string|false|none|none|
+|domainAgeSeconds|integer(int64)|false|none|none|
+|domainAgeIso8601|string|false|none|none|
+|parseCode|integer(int32)|false|none|none|
+|executionTime|integer(int64)|false|none|none|
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|parseCode|0|
+|parseCode|200|
+|parseCode|401|
+|parseCode|403|
+|parseCode|404|
+|parseCode|406|
+|parseCode|408|
+|parseCode|410|
+|parseCode|418|
+|parseCode|429|
+|parseCode|451|
+|parseCode|500|
+|parseCode|501|
+|parseCode|503|
+
+<h2 id="tocSwhoisserverrecord">WhoisServerRecord</h2>
+
+<a id="schemawhoisserverrecord"></a>
+
+```json
+{
+  "recordFound": true,
+  "registrar": {
+    "registrarId": "string",
+    "name": "string",
+    "whois": "string",
+    "url": "string",
+    "abuseEmail": "string",
+    "abusePhone": "string"
+  },
+  "dnsSec": "string",
+  "domainName": "string",
+  "tld": "string",
+  "domainHandle": "string",
+  "domainOwnerContact": {
+    "userId": "string",
+    "name": "string",
+    "organization": "string",
+    "street1": "string",
+    "street2": "string",
+    "street3": "string",
+    "street4": "string",
+    "city": "string",
+    "state": "string",
+    "postalCode": "string",
+    "country": "string",
+    "phoneNumber": "string",
+    "phoneNumberExt": "string",
+    "faxNumber": "string",
+    "faxNumberExt": "string",
+    "email": "string"
+  },
+  "adminContact": {
+    "userId": "string",
+    "name": "string",
+    "organization": "string",
+    "street1": "string",
+    "street2": "string",
+    "street3": "string",
+    "street4": "string",
+    "city": "string",
+    "state": "string",
+    "postalCode": "string",
+    "country": "string",
+    "phoneNumber": "string",
+    "phoneNumberExt": "string",
+    "faxNumber": "string",
+    "faxNumberExt": "string",
+    "email": "string"
+  },
+  "billingContact": {
+    "userId": "string",
+    "name": "string",
+    "organization": "string",
+    "street1": "string",
+    "street2": "string",
+    "street3": "string",
+    "street4": "string",
+    "city": "string",
+    "state": "string",
+    "postalCode": "string",
+    "country": "string",
+    "phoneNumber": "string",
+    "phoneNumberExt": "string",
+    "faxNumber": "string",
+    "faxNumberExt": "string",
+    "email": "string"
+  },
+  "techContact": {
+    "userId": "string",
+    "name": "string",
+    "organization": "string",
+    "street1": "string",
+    "street2": "string",
+    "street3": "string",
+    "street4": "string",
+    "city": "string",
+    "state": "string",
+    "postalCode": "string",
+    "country": "string",
+    "phoneNumber": "string",
+    "phoneNumberExt": "string",
+    "faxNumber": "string",
+    "faxNumberExt": "string",
+    "email": "string"
+  },
+  "registrarContact": {
+    "userId": "string",
+    "name": "string",
+    "organization": "string",
+    "street1": "string",
+    "street2": "string",
+    "street3": "string",
+    "street4": "string",
+    "city": "string",
+    "state": "string",
+    "postalCode": "string",
+    "country": "string",
+    "phoneNumber": "string",
+    "phoneNumberExt": "string",
+    "faxNumber": "string",
+    "faxNumberExt": "string",
+    "email": "string"
+  },
+  "zoneContact": {
+    "userId": "string",
+    "name": "string",
+    "organization": "string",
+    "street1": "string",
+    "street2": "string",
+    "street3": "string",
+    "street4": "string",
+    "city": "string",
+    "state": "string",
+    "postalCode": "string",
+    "country": "string",
+    "phoneNumber": "string",
+    "phoneNumberExt": "string",
+    "faxNumber": "string",
+    "faxNumberExt": "string",
+    "email": "string"
+  },
+  "nameServers": [
+    {
+      "Address": "string"
+    }
+  ],
+  "domainStati": [
+    "string"
+  ],
+  "remarks": "string",
+  "reseller": "string",
+  "created": "2018-08-09T10:26:42Z",
+  "changed": "2018-08-09T10:26:42Z",
+  "expiry": "2018-08-09T10:26:42Z",
+  "rawResponse": "string",
+  "customFields": [
+    {
+      "customFieldId": 0,
+      "name": "string",
+      "value": "string"
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|recordFound|boolean|false|none|none|
+|registrar|[Registrar](#schemaregistrar)|false|none|none|
+|dnsSec|string|false|none|none|
+|domainName|string|false|none|none|
+|tld|string|false|none|none|
+|domainHandle|string|false|none|none|
+|domainOwnerContact|[Contact](#schemacontact)|false|none|none|
+|adminContact|[Contact](#schemacontact)|false|none|none|
+|billingContact|[Contact](#schemacontact)|false|none|none|
+|techContact|[Contact](#schemacontact)|false|none|none|
+|registrarContact|[Contact](#schemacontact)|false|none|none|
+|zoneContact|[Contact](#schemacontact)|false|none|none|
+|nameServers|[[NameServer](#schemanameserver)]|false|none|none|
+|domainStati|[string]|false|none|none|
+|remarks|string|false|none|none|
+|reseller|string|false|none|none|
+|created|string(date-time)|false|none|none|
+|changed|string(date-time)|false|none|none|
+|expiry|string(date-time)|false|none|none|
+|rawResponse|string|false|none|none|
+|customFields|[[CustomField](#schemacustomfield)]|false|none|none|
+
+<h2 id="tocSregistrar">Registrar</h2>
+
+<a id="schemaregistrar"></a>
+
+```json
+{
+  "registrarId": "string",
+  "name": "string",
+  "whois": "string",
+  "url": "string",
+  "abuseEmail": "string",
+  "abusePhone": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|registrarId|string|false|none|none|
+|name|string|false|none|none|
+|whois|string|false|none|none|
+|url|string|false|none|none|
+|abuseEmail|string|false|none|none|
+|abusePhone|string|false|none|none|
+
+<h2 id="tocScontact">Contact</h2>
+
+<a id="schemacontact"></a>
+
+```json
+{
+  "userId": "string",
+  "name": "string",
+  "organization": "string",
+  "street1": "string",
+  "street2": "string",
+  "street3": "string",
+  "street4": "string",
+  "city": "string",
+  "state": "string",
+  "postalCode": "string",
+  "country": "string",
+  "phoneNumber": "string",
+  "phoneNumberExt": "string",
+  "faxNumber": "string",
+  "faxNumberExt": "string",
+  "email": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|userId|string|false|none|none|
+|name|string|false|none|none|
+|organization|string|false|none|none|
+|street1|string|false|none|none|
+|street2|string|false|none|none|
+|street3|string|false|none|none|
+|street4|string|false|none|none|
+|city|string|false|none|none|
+|state|string|false|none|none|
+|postalCode|string|false|none|none|
+|country|string|false|none|none|
+|phoneNumber|string|false|none|none|
+|phoneNumberExt|string|false|none|none|
+|faxNumber|string|false|none|none|
+|faxNumberExt|string|false|none|none|
+|email|string|false|none|none|
+
+<h2 id="tocSnameserver">NameServer</h2>
+
+<a id="schemanameserver"></a>
+
+```json
+{
+  "Address": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|Address|string|false|none|none|
+
+<h2 id="tocScustomfield">CustomField</h2>
+
+<a id="schemacustomfield"></a>
+
+```json
+{
+  "customFieldId": 0,
+  "name": "string",
+  "value": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|customFieldId|integer(int32)|false|none|none|
+|name|string|false|none|none|
+|value|string|false|none|none|
