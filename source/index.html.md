@@ -48,7 +48,7 @@ We take your privacy, data security and legislative compliance seriously.
 [emailhippo.com](https://www.emailhippo.com) has been independently assessed as being ISO27001:2013 compliant by the British Assessment Bureau. Our certification number is 209495.
 
 ## Security
-[emailhippo.com](https://www.emailhippo.com) takes the security of your data seriously. Here are the details of how your data is received, stored and processed.
+[Email Hippo](https://www.emailhippo.com) takes the security of your data seriously. Here are the details of how your data is received, stored and processed.
 
 Other than the human-based policies and procedures defined in the Data processing terms, there are a few technology-based issues to mention:
 
@@ -71,7 +71,7 @@ Other than the human-based policies and procedures defined in the Data processin
 
 ## Features and benefits
 
-### Confidence In Data Security
+### Confidence in data security
 
 With ISO27001:2013 certification, robust technology and clearly defined policies and procedures, you can trust Email Hippo with your data.
 
@@ -80,25 +80,25 @@ See [privacy policy](https://www.emailhippo.com/privacy-policy/) for more inform
 ### Consistent, parsed records
 
 <aside class="notice">
-Parsed records are available in Professional and Enterprise Editions.
+Parsed records are available in editions 2 and 3.
 </aside>
 
 WHOIS records are intrinsically designed for humans to read and records come in different formats according to the choices made by an individual Domain Name Registrar and the Domain Name Registry.
 
-For any serious application demanding data in a predictable, consistent machine-readable format, the standard WHOIS system will not work. This is where Email Hippo adds value to the WHOIS system by adding services capable of reading the relatively chaotic structure of WHOIS records into reliable, predictable and machine-readable formats.
+For any serious application demanding data in a predictable, consistent machine-readable format, the standard WHOIS system will not work. This is where Email Hippo adds value to the WHOIS system by adding services capable of presenting the relatively chaotic structure of WHOIS records as reliable, predictable and machine-readable formats.
 
 ### Machine readable dates
 For ultimate in machine integration compatibility, Email Hippo returns dates and durations in ISO 8601 standard formats.
 
-### > 99.9% service availability
+### > 99.9% uptime
 Fully load balanced and automatic fail-over systems dispersed across multiple data centers in multiple regions deliver enterprise-grade resilience.
 
-See Service reliability for more information on availability and SLA.
+See [Service reliability](#servicereliability) for more information on availability and SLA.
 
 ### Easy integration
 See [integrations](#integrations) to see how quick and easy it is to integrate with our services from over 19 different technologies and platforms.
 
-### Fanatical Service Quality Management (SQM)
+### Fanatical Service Quality Management
 Email Hippo operational staff obsessively monitor services to ensure the best possible uptime and coverage.
 
 Uptime and functional correctness are actively monitored on a minute by minute basis from multiple data centers dispersed across North America, Europe, and Asia.
@@ -120,10 +120,10 @@ Email Hippo is used to query WHOIS records in real-time.
 <table>
 	<thead>
 		<tr>
-			<th scope="col"></th>
-			<th scope="col">Basic</th>
-			<th scope="col">Professional</th>
-			<th scope="col">Enterprise</th>
+			<th scope="col">Edition</th>
+			<th scope="col">1</th>
+			<th scope="col">2</th>
+			<th scope="col">3</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -176,7 +176,7 @@ Email Hippo is used to query WHOIS records in real-time.
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
-			<td>Admin data</td>
+			<td>Administrator data</td>
 			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
@@ -188,7 +188,7 @@ Email Hippo is used to query WHOIS records in real-time.
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
-			<td>Tech contact data</td>
+			<td>Technical contact data</td>
 			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
@@ -212,7 +212,7 @@ Email Hippo is used to query WHOIS records in real-time.
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
-			<td>Domain stati</td>
+			<td>Domain status details</td>
 			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
@@ -239,7 +239,7 @@ Email Hippo is used to query WHOIS records in real-time.
 </table>
 
 <aside class="notice">
-Once that you have a license key, the edition is configurable on the fly by upgrading your edition at https://help.emailhippo.com.
+Once that you have a license key, your edition is configurable on the fly by upgrading your edition at https://help.emailhippo.com.
 </aside>
 
 ## Supported Top Level Domains (TLDs)
@@ -266,9 +266,10 @@ Once that you have a license key, the edition is configurable on the fly by upgr
 
 
 ## Service reliability
-Reliability of your systems is important to you and your clients. You can be sure that we won’t let you down when you use our services in your business applications.
+<a id="servicereliability"></a>
+Like you, we care about the reliability of our services.
 
-By using the latest, distributed cloud-based systems, we give deliver fast response times together with an enterprise-grade uptime of more than 99.9%.
+By using the latest, distributed cloud-based systems, we deliver fast response times together with an enterprise-grade uptime of more than 99.9%.
 
 ### About our infrastructure
 We operate three data centers geographically dispersed as follows:
@@ -283,7 +284,7 @@ Network traffic is optimized for fast, reliable global delivery using [Cloudflar
 ### Service level agreement
 Our API has a stated SLA that ensures that we provide you with more than 99.9% uptime for our services.
 
-See our full [Service Level Agreement](https://www.emailhippo.com/terms-of-service/) for further information.
+See our full [service level agreement](https://www.emailhippo.com/terms-of-service/) for further information.
 
 ## Concurrency
 To preserve the operational integrity of the service to all of our customers, there is a maximum concurrency enforced by our systems.
@@ -294,13 +295,13 @@ Allowed throughput is **50 WHOIS queries per second**.
 Throughput exceeding these limits will receive HTTP response code 429 (too many requests) for subsequent requests for a duration of one minute.
 
 ### Suggestions on how to manage throughput
-There are several things that it may be helpful to think about to control throughput so as not to exceed the maximum limits described above such as:
+If you experience or anticipate exceeding throughput limits, here are two ways to control query rates:
 
 * Test your integration with representative production loads over a period of time. Monitor response codes for any 429’s. If you see any 429’s please reduce the rate at which your application is querying our servers.
 * For applications that can tolerate slight delays in your data processing mesh, consider using queuing infrastructure with a rate controllable processor. Your ‘processor’ can then schedule picking work off the queue and submitting requests to our systems at a controllable rate.
 
 ### Large throughput requirement
-For sustained throughput, more than 50 domain queries per second, please contact us for options on private, dedicated service.
+For sustained throughput of more than 50 domain queries per second, please contact us about a private, dedicated service.
 
 ## Specification
 |Item|Spec|
@@ -308,16 +309,16 @@ For sustained throughput, more than 50 domain queries per second, please contact
 |Manufacturer|emailhippo.com|
 |Uptime|> 99.9%|
 |Response time|>0.2seconds < 8 seconds. Typical response time 0.7 seconds.|
-|Throughput and concurrency|> 100 TPS(Transactions Per Second).|
+|Throughput and concurrency|> 100 TPS(Transactions Per Second)|
 |Security and encryption|Transport security using HTTPS. Data at rest encrypted using 256-bit AES encryption.|
-|Integration|RESTful GET over HTTPS, XML GET over HTTPS, BSON over HTTPS, protobuf over HTTPS.|
-|Authentication|License key.|
-|Infrastructure|Geographically dispersed cloud data centers, auto load balance / failover.|
+|Integration|RESTful GET over HTTPS, XML GET over HTTPS, BSON over HTTPS, protobuf over HTTPS|
+|Authentication|License key|
+|Infrastructure|Geographically dispersed cloud data centers, auto load balance / failover|
 
 # Integrations
 <a id="integrations"></a>
 
-Download ready made server and client integrations for many languages and platforms from our [Swagger Hub](https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1).
+Download ready-made server and client integrations for many languages and platforms from our [Swagger Hub](https://app.swaggerhub.com/apis/Email-Hippo/email-hippo_whois_api/v1).
 
 **Integration libraries included for:**
 
@@ -362,11 +363,11 @@ To deliver the speed and reliability demanded by our customers, verification res
 * Level 1 cache: CloudFlare based. Cache expiration 2 hours.
 * Level 2 cache: Microsoft Azure based. Cache expiration up to 90 days (depends on domain expiry in the WHOIS record).
 
-## Can I get My Usage in Real-Time?
+## Can I get my usage in real-time?
 Not yet. This feature is in the development pipeline.
 
 ## How does it work?
-At a basic conceptual level, the process of querying WHOIS services is very simple. First, find the authoritive WHOIS server for a particular TLD. Next, connect to the server on port 43, query the domain and capture the response.
+At a basic conceptual level, the process of querying WHOIS services is very simple. First, find the authoritative WHOIS server for a particular TLD. Next, connect to the server on port 43, query the domain and capture the response.
 
 The hard bit is dealing with WHOIS services that are intrinsically configured to work against the process of querying domains in any form large volume scale. Additionally, the WHOIS system does not follow one, unified standard which means that the data returned from WHOIS services is very difficult to parse to anything that is useful for automation or integration purposes.
 
