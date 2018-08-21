@@ -262,7 +262,6 @@ Once that you have a license key, your edition is configurable on the fly by upg
 * .org.uk
 * .ru
 * .uk
-* .uk.com
 
 
 ## Service reliability
