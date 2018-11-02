@@ -409,13 +409,13 @@ Query WHOIS records by domain and license key.
 
 ```shell
 # You can also use wget
-curl -X GET //api.whoishippo.com//v1/{k}/{d} \
+curl -X GET //api.whoishippo.com/v1/{k}/{d} \
   -H 'Accept: application/json'
 
 ```
 
 ```http
-GET //api.whoishippo.com//v1/{k}/{d} HTTP/1.1
+GET //api.whoishippo.com/v1/{k}/{d} HTTP/1.1
 Host: null
 
 Accept: application/json
@@ -429,7 +429,7 @@ var headers = {
 };
 
 $.ajax({
-  url: '//api.whoishippo.com//v1/{k}/{d}',
+  url: '//api.whoishippo.com/v1/{k}/{d}',
   method: 'get',
 
   headers: headers,
@@ -448,7 +448,7 @@ const headers = {
 
 };
 
-fetch('//api.whoishippo.com//v1/{k}/{d}',
+fetch('//api.whoishippo.com/v1/{k}/{d}',
 {
   method: 'GET',
 
@@ -470,7 +470,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.get '//api.whoishippo.com//v1/{k}/{d}',
+result = RestClient.get '//api.whoishippo.com/v1/{k}/{d}',
   params: {
   }, headers: headers
 
@@ -484,7 +484,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.get('//api.whoishippo.com//v1/{k}/{d}', params={
+r = requests.get('//api.whoishippo.com/v1/{k}/{d}', params={
 
 }, headers = headers)
 
@@ -493,7 +493,7 @@ print r.json()
 ```
 
 ```java
-URL obj = new URL("//api.whoishippo.com//v1/{k}/{d}");
+URL obj = new URL("//api.whoishippo.com/v1/{k}/{d}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -525,7 +525,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "//api.whoishippo.com//v1/{k}/{d}", data)
+    req, err := http.NewRequest("GET", "//api.whoishippo.com/v1/{k}/{d}", data)
     req.Header = headers
 
     client := &http.Client{}
