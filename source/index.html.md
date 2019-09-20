@@ -80,7 +80,7 @@ See [privacy policy](https://www.emailhippo.com/privacy-policy/) for more inform
 ### Consistent, parsed records
 
 <aside class="notice">
-Parsed records are available in editions 2 and 3.
+Parsed records are available in editions 1 and 2.
 </aside>
 
 WHOIS records are intrinsically designed for humans to read and records come in different formats according to the choices made by an individual Domain Name Registrar and the Domain Name Registry.
@@ -90,7 +90,7 @@ For any serious application demanding data in a predictable, consistent machine-
 ### Machine readable dates
 For ultimate in machine integration compatibility, Email Hippo returns dates and durations in ISO 8601 standard formats.
 
-### > 99.9% uptime
+### > 99.95% uptime
 Fully load balanced and automatic fail-over systems dispersed across multiple data centers in multiple regions deliver enterprise-grade resilience.
 
 See [Service reliability](#servicereliability) for more information on availability and SLA.
@@ -123,7 +123,6 @@ Email Hippo is used to query WHOIS records in real-time.
 			<th scope="col">Edition</th>
 			<th scope="col">1</th>
 			<th scope="col">2</th>
-			<th scope="col">3</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -131,107 +130,89 @@ Email Hippo is used to query WHOIS records in real-time.
 			<td>Raw WHOIS text</td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
-			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Hippo database dates</td>
-			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Time to expiry date</td>
 			<td><i class="fas fa-times"></i></td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Time to expiry (ISO-8601)</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Domain age</td>
 			<td><i class="fas fa-times"></i></td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Domain age (ISO-8601)</td>
 			<td><i class="fas fa-times"></i></td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>WHOIS Record created date</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Registrar data</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Administrator data</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Billing contact data</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Technical contact data</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Registrar contact data</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Zone contact data</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Name servers</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Domain status details</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Created date</td>
 			<td><i class="fas fa-times"></i></td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Changed date</td>
 			<td><i class="fas fa-times"></i></td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
 		<tr>
 			<td>Expiry date</td>
-			<td><i class="fas fa-times"></i></td>
 			<td><i class="fas fa-check"></i></td>
 			<td><i class="fas fa-check"></i></td>
 		</tr>
@@ -268,7 +249,7 @@ Once that you have a license key, your edition is configurable on the fly by upg
 <a id="servicereliability"></a>
 Like you, we care about the reliability of our services.
 
-By using the latest, distributed cloud-based systems, we deliver fast response times together with an enterprise-grade uptime of more than 99.9%.
+By using the latest, distributed cloud-based systems, we deliver fast response times together with an enterprise-grade uptime of more than 99.95%.
 
 ### About our infrastructure
 We operate three data centers geographically dispersed as follows:
@@ -306,7 +287,7 @@ For sustained throughput of more than 50 domain queries per second, please conta
 |Item|Spec|
 |---|---|
 |Manufacturer|emailhippo.com|
-|Uptime|> 99.9%|
+|Uptime|> 99.95%|
 |Response time|>0.2seconds < 8 seconds. Typical response time 0.7 seconds.|
 |Throughput and concurrency|> 100 TPS(Transactions Per Second)|
 |Security and encryption|Transport security using HTTPS. Data at rest encrypted using 256-bit AES encryption.|
@@ -350,7 +331,7 @@ Great question. See [Data privacy](#dataPrivacy) for more information.
 [Click here to request a key](https://www.emailhippo.com/contact)
 
 ## How reliable is the API?
-&gt; 99.9% average availability with a defined [SLA](https://www.emailhippo.com/terms-of-service/).
+&gt; 99.95% average availability with a defined [SLA](https://www.emailhippo.com/terms-of-service/).
 
 ## Does the system get slower when it’s busy?
 No. All infrastructure is hosted in cloud based platforms with automatic scaling enabled. Automatic scaling kicks in at busy times to provide more hardware resources to meet demand.
